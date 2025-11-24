@@ -2,7 +2,7 @@ import os
 import pandas as pd
 import glob
 
-PROJECT_ROOT = os.path.join(os.path.dirname(__file__), "..")
+PROJECT_ROOT = os.path.join(os.path.dirname(__file__), "../..")
 INTERIM_DIR = os.path.join(PROJECT_ROOT, "data", "interim")
 
 COUNTRY_MAP = {
@@ -79,7 +79,7 @@ def load_and_clean_spotify_charts(year_dir, year):
 
 def process_multiple_years(base_dir, years):
     for year in years:
-        year_dir = os.path.join(base_dir, f"spotify_charts_{year}")
+        year_dir = os.path.join(base_dir, "spotify", f"{year}")
         if os.path.exists(year_dir):
             load_and_clean_spotify_charts(year_dir, year)
         else:
